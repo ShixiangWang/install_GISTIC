@@ -21,6 +21,8 @@ This program is a pure bash script and can be run in the following way.
 # args2: the install directory, must be absolute path, note relative path
 ```
 
+This program is tested and currently only support GISTIC 2.0.23, any suggestion or pull request is welcome.
+
 ## LICENSE
 
 MIT &copy; 2019 Shixiang Wang
