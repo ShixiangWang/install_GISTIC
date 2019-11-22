@@ -23,6 +23,10 @@ This program is a pure bash script and can be run in the following way.
 
 This program is tested and currently only support GISTIC 2.0.23, any suggestion or pull request is welcome.
 
+## Note
+
+`unset DISPLAY` is recommendly added to run script for avoiding X11 related errors.
+
 ## LICENSE
 
 MIT &copy; 2019 Shixiang Wang
