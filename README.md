@@ -4,7 +4,7 @@ I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for t
 
 ## Download
 
-Download GISTIC 2.0 from <ftp://ftp.broadinstitute.org/pub/GISTIC2.0/>.
+Download GISTIC 2.0 from ftp://ftp.broadinstitute.org/pub/GISTIC2.0
 
 ## Installation
 
@@ -22,7 +22,7 @@ This program is a pure bash script and can be run in the following way.
 ./install_GISTIC2.sh args1 args2
 
 # args1: the path to GISTIC_x_x_xx.tar.gz file
-# args2: the install directory, must be absolute path, note relative path
+# args2: the install directory, must be absolute path, not relative path
 ```
 
 This program is tested and currently only support GISTIC 2.0.23, any suggestion or pull request is welcome.
