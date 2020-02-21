@@ -2,6 +2,10 @@
 
 I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for telling readers how to install GISTIC 2.0 (a famous software for copy numbeer analysis) step by step. Recently I realize the installation steps can be implemented automatically, so I write this program.
 
+## Download
+
+Download GISTIC 2.0 from <ftp://ftp.broadinstitute.org/pub/GISTIC2.0/>.
+
 ## Installation
 
 ```bash
