@@ -29,7 +29,7 @@ This program is a pure bash script and can be run in the following way.
 
 ## Install from docker
 
-Two days:
+Two ways:
 
 ### Just pull from Docker hub <https://hub.docker.com/r/shixiangwang/gistic>.
 
