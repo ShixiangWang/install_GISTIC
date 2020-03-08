@@ -12,7 +12,6 @@ LABEL \
 #     zlib1g-dev \
 #     gawk
 
-RUN mkdir /opt/
 COPY install_GISTIC2.sh /opt/.
 
 WORKDIR /opt/
