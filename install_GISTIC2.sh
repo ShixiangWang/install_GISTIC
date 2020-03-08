@@ -7,9 +7,23 @@
 # args2: the install directory, must be absolute path, note relative path
 # 
 # 
-# Version: 0.1.0 for GISTIC 2.0.23
-# @copyright 2019 Shixiang Wang <w_shixiang@163.com>
+# Version: 0.2.0 for GISTIC 2.0.23
+# @copyright 2019-2020 Shixiang Wang <w_shixiang@163.com>
 # Release under MIT license
+
+## Check OS
+if["$(uname)"=="Darwin"];then
+    # MAC OS
+    echo "MacOS is detected, the GISTIC2 is for Linux at default, just take a try..."
+    CONFIG=~/.bash_profile
+elif["$(expr substr $(uname -s) 1 5)"=="Linux"];then   
+    # GNU/Linux
+    CONFIG=~/.bashrc
+else
+    # Windows NT
+    echo "Windows is detected, the GISTIC2 is for Linux at default, just take a try..."
+    CONFIG=~/.bashrc
+fi
 
 file=$(basename $1)
 dir=$2
@@ -34,7 +48,7 @@ cp $1 $dir && cd $dir
 
 # Unzip
 echo =================
-echo "  Installing...  "
+echo "  Unzipping...  "
 echo =================
 tar zxvf $file
 mkdir MATLAB_Compiler_Runtime
@@ -52,9 +66,9 @@ unset DISPLAY
 echo ==================================
 echo "Seting environmanet variables.."
 echo ==================================
-echo "export XAPPLRESDIR=$dir/MATLAB_Compiler_Runtime/v83/X11/app-defaults:\$XAPPLRESDIR" >> ~/.bashrc
-echo "export LD_LIBRARY_PATH=$dir/MATLAB_Compiler_Runtime/v83/runtime/glnxa64:$dir/MATLAB_Compiler_Runtime/v83/bin/glnxa64:$dir/MATLAB_Compiler_Runtime/v83/sys/os/glnxa64:\${LD_LIBRARY_PATH}" >> ~/.bashrc
-source ~/.bashrc
+echo "export XAPPLRESDIR=$dir/MATLAB_Compiler_Runtime/v83/X11/app-defaults:\$XAPPLRESDIR" >> $CONFIG
+echo "export LD_LIBRARY_PATH=$dir/MATLAB_Compiler_Runtime/v83/runtime/glnxa64:$dir/MATLAB_Compiler_Runtime/v83/bin/glnxa64:$dir/MATLAB_Compiler_Runtime/v83/sys/os/glnxa64:\${LD_LIBRARY_PATH}" >> $CONFIG
+source $CONFIG
 
 # Testing
 echo ==================
@@ -66,5 +80,13 @@ cd ../
 
 
 rm $file
-echo "Install finished, have fun!"
-echo "-- Shixiang"
+
+if [ $? -ne 0 ]; then
+    echo "Test failed, please check the errors above."
+    echo "Typically, the errors are due to lack of some system dependencies."
+    echo "    Please search the QA on internet or file to https://github.com/ShixiangWang/install_GISTIC/issues"
+else
+    echo "Install finished, have fun!"
+    echo "Check example code in file <run_gistic_example> for usage."
+    echo "-- Shixiang"
+fi

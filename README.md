@@ -1,6 +1,10 @@
 # Install GISTIC2 by one line code
 
-I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for telling readers how to install GISTIC 2.0 (a famous software for copy numbeer analysis) step by step. Recently I realize the installation steps can be implemented automatically, so I write this program.
+I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for telling readers how to install GISTIC 2.0 (a famous software for copy number analysis) step by step. Recently I realize the installation steps can be implemented automatically, so I write this program.
+
+> Update:
+>
+> - 2020-03-08: add system check
 
 ## Download
 
@@ -33,5 +37,5 @@ This program is tested and currently only support GISTIC 2.0.23, any suggestion 
 
 ## LICENSE
 
-MIT &copy; 2019 Shixiang Wang
+MIT &copy; 2019-2020 Shixiang Wang
 
