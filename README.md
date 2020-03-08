@@ -6,19 +6,17 @@ I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for t
 >
 > - 2020-03-08: add system check
 
-## Download
+## Install from script 
 
-Download GISTIC 2.0 from ftp://ftp.broadinstitute.org/pub/GISTIC2.0
-
-## Installation
+1. Download GISTIC 2.0 from ftp://ftp.broadinstitute.org/pub/GISTIC2.0
+2. Download this repository.
 
 ```bash
 git clone https://github.com/ShixiangWang/install_GISTIC
 cd install_GISTIC
 chmod u+x install_GISTIC2.sh
 ```
-
-## Usage
+3. Run script.
 
 This program is a pure bash script and can be run in the following way.
 
@@ -29,11 +27,37 @@ This program is a pure bash script and can be run in the following way.
 # args2: the install directory, must be absolute path, not relative path
 ```
 
-This program is tested and currently only support GISTIC 2.0.23, any suggestion or pull request is welcome.
+## Install from docker
+
+Two days:
+
+### Just pull from Docker hub <https://hub.docker.com/r/shixiangwang/gistic>.
+
+```bash
+docker pull shixiangwang/gistic
+```
+
+### Build the image by yourself.
+
+```bash
+git clone https://github.com/ShixiangWang/install_GISTIC
+cd install_GISTIC
+sudo docker build -t gistic:latest .
+```
+
+### Run docker image
+
+```bash
+sudo docker run -it gistic /bin/bash
+```
+
+The installed GISTIC is located at `/opt/GISTIC`.
 
 ## Note
 
 `unset DISPLAY` is recommendly added to run script for avoiding X11 related errors.
+
+This program is tested and currently only support GISTIC 2.0.23, any suggestion or pull request is welcome.
 
 ## LICENSE
 

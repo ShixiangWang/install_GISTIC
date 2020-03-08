@@ -15,4 +15,4 @@ RUN apt-get update && apt-get install -y \
 
 RUN apt-get install -y libxt6 libxmu6
 
-RUN chmod u+x install_GISTIC2.sh && ./install_GISTIC2.sh GISTIC_2_0_23.tar.gz /opt/GISTIC
+RUN chmod u+x install_GISTIC2.sh && ./install_GISTIC2.sh GISTIC_2_0_23.tar.gz /opt/GISTIC && rm /opt/GISTIC_2_0_23.tar.gz
