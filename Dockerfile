@@ -5,12 +5,10 @@ LABEL \
     description="Image for GISTIC 2.0" \
     version="0.2.0"
 
-# RUN apt-get update && apt-get install -y \
-#     tcsh \
-#     gcc \
-#     build-essential \
-#     zlib1g-dev \
-#     gawk
+RUN apt-get update && apt-get install -y \
+    gcc \
+    build-essential \
+    gawk
 
 COPY install_GISTIC2.sh /opt/.
 

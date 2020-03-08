@@ -12,11 +12,11 @@
 # Release under MIT license
 
 ## Check OS
-if["$(uname)"=="Darwin"];then
+if [ "$(uname)"=="Darwin" ];then
     # MAC OS
     echo "MacOS is detected, the GISTIC2 is for Linux at default, just take a try..."
     CONFIG=~/.bash_profile
-elif["$(expr substr $(uname -s) 1 5)"=="Linux"];then   
+elif [ "$(expr substr $(uname -s) 1 5)"=="Linux" ];then   
     # GNU/Linux
     CONFIG=~/.bashrc
 else
@@ -78,9 +78,6 @@ echo ==================
 cd ../
 ./run_gistic_example
 
-
-rm $file
-
 if [ $? -ne 0 ]; then
     echo "Test failed, please check the errors above."
     echo "Typically, the errors are due to lack of some system dependencies."
@@ -90,3 +87,5 @@ else
     echo "Check example code in file <run_gistic_example> for usage."
     echo "-- Shixiang"
 fi
+
+rm $file
