@@ -59,6 +59,12 @@ The installed GISTIC is located at `/opt/GISTIC`.
 
 This program is tested and currently only support GISTIC 2.0.23, any suggestion or pull request is welcome.
 
+## Citation
+
+If you want to thank my work, please cite my recent paper and add the link to this GitHub repo.
+
+*Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction, **eLife***. https://doi.org/10.7554/eLife.49020
+
 ## LICENSE
 
 MIT &copy; 2019-2020 Shixiang Wang
