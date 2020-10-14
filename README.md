@@ -55,7 +55,7 @@ Click [example script](./run_docker.sh) to see how to run GISTIC in Docker.
 Run the following command to go into Docker interactive terminal.
 
 ```sh
-sudo docker run -it --rm --entrypoint bash shixiangwang/sigflow
+sudo docker run -it --rm --entrypoint bash shixiangwang/gistic
 ```
 
 ## Note
