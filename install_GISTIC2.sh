@@ -85,6 +85,7 @@ if [ $? -ne 0 ]; then
 else
     echo "Install finished, have fun!"
     echo "Check example code in file <run_gistic_example> for usage."
+    echo "Check run_docker.sh if you use it in Docker environment."
     echo "-- Shixiang"
 fi
 
