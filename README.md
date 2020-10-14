@@ -3,7 +3,8 @@
 I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for telling readers how to install GISTIC 2.0 (a famous software for copy number analysis) step by step. Recently I realize the installation steps can be implemented automatically, so I write this program.
 
 > Update:
->
+
+> - 2020-10-14: run GISTIC with Docker is supported as an entrypoint.
 > - 2020-03-08: add system check
 
 ## Install from script 
@@ -27,6 +28,8 @@ This program is a pure bash script and can be run in the following way.
 # args2: the install directory, must be absolute path, not relative path
 ```
 
+4. Check [example script](./run_GISTIC_example.sh) to see how to run GISTIC.
+
 ## Install from docker
 
 Two ways:
@@ -47,11 +50,13 @@ sudo docker build -t gistic:latest .
 
 ### Run docker image
 
-```bash
-sudo docker run -it gistic /bin/bash
-```
+Click [example script](./run_docker.sh) to see how to run GISTIC in Docker.
 
-The installed GISTIC is located at `/opt/GISTIC`.
+Run the following command to go into Docker interactive terminal.
+
+```sh
+sudo docker run -it --rm --entrypoint bash shixiangwang/sigflow
+```
 
 ## Note
 
