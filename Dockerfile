@@ -17,13 +17,13 @@ RUN echo "Install GISTIC..." && \
     wget -c ftp://ftp.broadinstitute.org/pub/GISTIC2.0/GISTIC_2_0_23.tar.gz && \
     chmod u+x install_GISTIC2.sh && \
     ./install_GISTIC2.sh GISTIC_2_0_23.tar.gz /opt/GISTIC && \
-    rm /opt/GISTIC_2_0_23.tar.gz
+    rm /opt/GISTIC_2_0_23.tar.gz && \
+    rm /opt/install_GISTIC2.sh && \
+    chmod -R 777 /opt/GISTIC
 
 RUN echo "Deploy GISTIC" && \
-    rm /opt/install_GISTIC2.sh && \
-    unset DISPLAY && \
+    unset DISPLAY
     #chmod u+x /opt/GISTIC/gistic2 && ln -s /opt/GISTIC/gistic2 /usr/bin/gistic2 && \
-    chmod -R 777 /opt/GISTIC
 
 ## set up environment variables
 ENV MCR_ROOT=/opt/GISTIC/MATLAB_Compiler_Runtime \
