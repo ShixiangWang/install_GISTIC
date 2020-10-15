@@ -3,7 +3,7 @@
 # w_shixiang@163.com
 
 GISTIC_LOC=/opt/GISTIC          # DONT change this position, it refer to docker path
-OUTDIR=`pwd`/test_results       # Change it if necessary
+OUTDIR=`pwd`/test_results2      # Change it if necessary
 
 echo --- creating output directory ---
 #basedir=<set_your_result_directory_here>
