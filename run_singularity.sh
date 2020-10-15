@@ -27,7 +27,7 @@ refgenefile=$GISTIC_LOC/refgenefiles/hg19.mat
 echo Starting...
 DOCKER_OUTDIR="$GISTIC_LOC"/run_result
 
-singularity run --containall --bind $basedir:$DOCKER_OUTDIR docker://shixiangwang/gistic \
+singularity run --bind $basedir:$DOCKER_OUTDIR docker://shixiangwang/gistic \
   -b $DOCKER_OUTDIR -seg $segfile -refgene $refgenefile \
   -rx 0 -genegistic 1 -smallmem 1 -broad 1 -brlen 0.5 -twosize 1 \
   -armpeel 1 -savegene 1 -maxseg 10000 -conf 0.99
