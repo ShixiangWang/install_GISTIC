@@ -3,7 +3,9 @@
 ## Modified from gistic2 script
 
 # Get script directory
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR=/opt/GISTIC
+echo "Going to $DIR"
 cd $DIR
 
 ## NOTE: change the line below if you have installed the Matlab MCR in an alternative location
