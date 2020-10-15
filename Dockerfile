@@ -20,11 +20,19 @@ RUN echo "Install GISTIC..." && \
     rm /opt/GISTIC_2_0_23.tar.gz
 
 RUN echo "Deploy GISTIC" && \
+    rm /opt/install_GISTIC2.sh && \
     unset DISPLAY && \
-    chmod u+x /opt/GISTIC/gistic2 && ln -s /opt/GISTIC/gistic2 /usr/bin/gistic2
-# COPY gistic.sh /opt/GISTIC/
-# RUN echo "Deploy GISTIC" && \
-#     chmod u+x /opt/GISTIC/gistic.sh && ln -s /opt/GISTIC/gistic.sh /usr/bin/gistic
+    #chmod u+x /opt/GISTIC/gistic2 && ln -s /opt/GISTIC/gistic2 /usr/bin/gistic2 && \
+    chmod -R 777 /opt/GISTIC
+
+## set up environment variables
+ENV MCR_ROOT=/opt/GISTIC/MATLAB_Compiler_Runtime \
+    MCR_VER=v83 \
+    LD_LIBRARY_PATH=$MCR_ROOT/$MCR_VER/runtime/glnxa64:$LD_LIBRARY_PATH \
+    LD_LIBRARY_PATH=$MCR_ROOT/$MCR_VER/bin/glnxa64:$LD_LIBRARY_PATH \
+    LD_LIBRARY_PATH=$MCR_ROOT/$MCR_VER/sys/os/glnxa64:$LD_LIBRARY_PATH \
+    XAPPLRESDIR=$MCR_ROOT/$MCR_VER/MATLAB_Component_Runtime/v83/X11/app-defaults
+
 WORKDIR /opt/GISTIC/
-ENTRYPOINT [ "gistic2" ]
+ENTRYPOINT [ "/opt/GISTIC/gp_gistic2_from_seg" ]
 CMD [ "--help" ]
