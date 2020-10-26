@@ -2,7 +2,7 @@
 
 I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for telling readers how to install GISTIC 2.0 (a famous software for copy number analysis) step by step. Recently I realize the installation steps can be implemented automatically, so I write this program.
 
-**Now, you can directly run GISTIC on hiplot platform now, try it at <https://hiplot.com.cn/advance/gistic2>**.
+**Now, you can directly run GISTIC on hiplot platform, try it at <https://hiplot.com.cn/advance/gistic2>**.
 
 > Update:
 > 
