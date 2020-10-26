@@ -2,8 +2,11 @@
 
 I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for telling readers how to install GISTIC 2.0 (a famous software for copy number analysis) step by step. Recently I realize the installation steps can be implemented automatically, so I write this program.
 
-> Update:
+**Now, you can directly run GISTIC on hiplot platform now, try it at <https://hiplot.com.cn/advance/gistic2>**.
 
+> Update:
+> 
+> - 2020-10-26: update README to add Hiplot link and singularity example link.
 > - 2020-10-14: run GISTIC with Docker is supported as an entrypoint.
 > - 2020-03-08: add system check
 
@@ -57,6 +60,8 @@ Run the following command to go into Docker interactive terminal.
 ```sh
 sudo docker run -it --rm --entrypoint bash shixiangwang/gistic
 ```
+
+If you are using singularity, check [this example](./run_singularity.sh) to see how to run GISTIC.
 
 ## Note
 
