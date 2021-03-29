@@ -6,9 +6,8 @@
 # args1: the path to GISTIC_x_x_xx.tar.gz file
 # args2: the install directory, must be absolute path, note relative path
 # 
-# 
 # Version: 0.2.0 for GISTIC 2.0.23
-# @copyright 2019-2020 Shixiang Wang <w_shixiang@163.com>
+# @copyright 2019 Shixiang Wang <w_shixiang@163.com>
 # Release under MIT license
 
 ## Check OS
