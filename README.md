@@ -6,6 +6,7 @@ I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for t
 
 > Update:
 > 
+> - 2021-04-02: add R script to clean overlap segments.
 > - 2020-10-26: update README to add Hiplot link and singularity example link.
 > - 2020-10-14: run GISTIC with Docker is supported as an entrypoint.
 > - 2020-03-08: add system check
@@ -65,9 +66,23 @@ If you are using singularity, check [this example](./run_singularity.sh) to see 
 
 ## Note
 
-`unset DISPLAY` is recommendly added to run script for avoiding X11 related errors.
+`unset DISPLAY` should be added to run script for avoiding X11 related errors.
 
 This program is tested and currently only support GISTIC 2.0.23, any suggestion or pull request is welcome.
+
+## Q & A
+
+1. How to handle error related to "overlap".
+
+You can clean the overlap segments byself firstly or use my written R script [preprocess.R](preprocess.R).
+
+```sh
+# Usage: Rscript preprocess.R input.seg [minimal_prob, default 0]
+#
+# Example: Rscript preprocess.R input.seg 5
+# Filter segments with less than 5 probes and then clean overlap segments
+# by weighted multiplication
+```
 
 ## Citation
 
