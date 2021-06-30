@@ -11,7 +11,7 @@ I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for t
 > - 2020-10-14: run GISTIC with Docker is supported as an entrypoint.
 > - 2020-03-08: add system check
 
-## Install from script 
+## Install from script (Linux Only)
 
 1. Download GISTIC 2.0 from ftp://ftp.broadinstitute.org/pub/GISTIC2.0
 2. Download this repository.
