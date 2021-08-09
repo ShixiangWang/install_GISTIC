@@ -61,8 +61,8 @@ data_drop <- data[, drop_overlaps(.SD), by = Sample_ID]
 data_drop$cluster_id <- NULL
 
 message("Outputing...")
-if (!dir.exists(dir.name(output_file))) {
-  dir.create(dir.name(output_file), recursive = TRUE)
+if (!dir.exists(dirname(output_file))) {
+  dir.create(dirname(output_file), recursive = TRUE)
 }
 
 data.table::fwrite(data_drop, output_file, sep = "\t")
