@@ -5,7 +5,8 @@ I have written two [Chinese blogs](https://www.jianshu.com/p/5822759a67e2) for t
 **Now, you can directly run GISTIC on hiplot platform, try it at <https://hiplot.com.cn/advance/gistic2>**.
 
 > Update:
-> 
+>
+> - 2021-08-09: add an option to `preprocess.R` to output data to custom file.
 > - 2021-04-02: add R script to clean overlap segments.
 > - 2020-10-26: update README to add Hiplot link and singularity example link.
 > - 2020-10-14: run GISTIC with Docker is supported as an entrypoint.

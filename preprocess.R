@@ -1,8 +1,8 @@
 #! /usr/bin/env Rscript
-# Copyright @ 2020, Shixiang Wang
+# Copyright @ 2021, Shixiang Wang
 # Input and Output are a standard Segment file for GISTIC
 #
-# Usage: Rscript preprocess.R input.seg [minimal_prob, default 0]
+# Usage: Rscript preprocess.R input.seg [minimal_prob, default 0] [output_file, default set a file with the same prefix but add '_clean_overlap.txt']
 #
 # Example: Rscript preprocess.R input.seg 5
 # Filter segments with less than 5 probes and then clean overlap segments
@@ -10,14 +10,24 @@
 message("Loading dependent packages...")
 library(data.table)
 library(tidygenomics)
+library(magrittr)
 
 message("Parsing input arguments...")
 args <- commandArgs(trailingOnly = TRUE)
-if (length(args) < 2) {
-  args[2] <- 0L
-} else {
+if (length(args) < 3) {
+  if (length(args) < 2) {
+    args[2] <- 0L
+  } else {
+    args[2] <- max(0L, as.integer(args[2]))
+  }
+  output_file <- paste0(sub('\\..[^\\.]*$', '', args[1]), "_clean_overlap.txt")
+} else if (length(args) == 3) { 
   args[2] <- max(0L, as.integer(args[2]))
+  output_file <- args[3]
+} else {
+  stop("Too many arguments!")
 }
+
 
 message("Reading file...")
 data <- fread(args[1])
@@ -51,7 +61,9 @@ data_drop <- data[, drop_overlaps(.SD), by = Sample_ID]
 data_drop$cluster_id <- NULL
 
 message("Outputing...")
-outfile <- sub('\\..[^\\.]*$', '', args[1])
-data.table::fwrite(data_drop, paste0(outfile, "_clean_overlap.txt"), sep = "\t")
-message("Done.")
+if (!dir.exists(dir.name(output_file))) {
+  dir.create(dir.name(output_file), recursive = TRUE)
+}
 
+data.table::fwrite(data_drop, output_file, sep = "\t")
+message("Done.")
